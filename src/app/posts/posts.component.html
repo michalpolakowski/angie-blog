@@ -1,0 +1,6 @@
+<h2></h2>
+<ul>
+  <li *ngFor="let post of posts">
+    <a routerLink="/detail/{{ post.pk }}">{{ post.title }} {{ post.text }}</a>
+  </li>
+</ul>
