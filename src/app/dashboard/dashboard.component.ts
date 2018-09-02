@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Post} from '../post';
+import { IPost } from '../post.model';
 import {PostService} from '../post.service';
 
 @Component({
@@ -8,15 +8,18 @@ import {PostService} from '../post.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  posts: Post[] = [];
+  posts: IPost[] = [];
   constructor(private postService: PostService) { }
 
   ngOnInit() {
-    this.getPosts();
+    this.getPopularPosts();
   }
-  getPosts(): void{
-    this.postService.getPosts()
-      .subscribe(posts => this.posts = posts.slice(1, 5));
+
+  getPopularPosts(): void{
+    this.postService.getPopularPosts()
+      .subscribe(posts => {
+        this.posts = posts.slice(0, 5);
+      });
   }
 
 }

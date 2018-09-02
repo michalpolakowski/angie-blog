@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../post';
+import { IPost } from '../post.model';
 import { PostService} from '../post.service';
+
+function htmlToPlainText(text) {
+  return text ? String(text).replace(/<^>]+>/gm, '') : '';
+}
 
 @Component({
   selector: 'app-posts',
@@ -8,7 +12,7 @@ import { PostService} from '../post.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  posts: Post[];
+  posts: IPost[];
   constructor(private postService: PostService) { }
 
   ngOnInit() {

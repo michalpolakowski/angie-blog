@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Post } from '../post';
+import { IPost } from '../post.model';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../post.service';
 import { Location } from '@angular/common';
@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
-  @Input() post: Post;
+  @Input() post: IPost;
   constructor(
     private route: ActivatedRoute,
     private postService: PostService,
@@ -24,6 +24,11 @@ export class PostDetailComponent implements OnInit {
     const pk = +this.route.snapshot.paramMap.get('pk');
     this.postService.getPost(pk)
       .subscribe((post => this.post = post));
+  }
+  save(): void {
+    const pk = +this.route.snapshot.paramMap.get('pk');
+    this.postService.updatePost(this.post, pk)
+      .subscribe(() => this.goBack());
   }
   goBack(): void {
     this.location.back();
