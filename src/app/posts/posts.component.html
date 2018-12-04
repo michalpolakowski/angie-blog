@@ -1,17 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card card-default post-panel" *ngFor="let post of posts">
-        <div class="card-header">
-          <div class="row">
-            <div class="col-md-10">
-              <h4><a routerLink="/detail/{{ post.pk }}" class="card-title">{{ post.title }}</a></h4>
-            </div>
-            <div class="col-md-2 text-right">Votes: {{ post.vote_set.length}}</div>
-          </div>
-        </div>
-        <div class="card-body">{{post.text}}</div>
-      </div>
-    </div>
-  </div>
+<div class="posts-container">
+<mat-card *ngFor="let post of posts">
+  <mat-card-header>
+    <mat-card-title><h1>{{ post.title }}</h1></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    {{ post.text }}
+  </mat-card-content>
+
+</mat-card>
 </div>

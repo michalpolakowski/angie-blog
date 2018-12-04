@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CommentService } from './comment.service';
+import { CommentService } from './services/comment.service';
 
 describe('CommentService', () => {
   beforeEach(() => {

@@ -14,3 +14,12 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+a {
+  text-decoration: none;
+  color: #9f9f9f;
+}
+
+a:hover{
+  color: #737373;
+}

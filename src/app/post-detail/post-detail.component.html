@@ -1,12 +1,12 @@
-<div *ngIf="post">
-
-  <div>{{ post.title }}</div>
-  <div>{{ post.text }}</div>
-  <div>
-    <label>Title:
-      <input [(ngModel)]="post.title" placeholder="title"> <button (click)="save()"> Save </button>
-    </label>
+<mat-card>
+  <div *ngIf="post; else notExists">
+    <h1>{{ post.title }}</h1>
+        <div [innerHtml]='post.text'></div>
+    <button (click)="goBack()">go back</button>
   </div>
-  <button (click)="goBack()">go back</button>
-</div>
+</mat-card>
+
+<ng-template #notExists>
+  There is no such post.
+</ng-template>
 

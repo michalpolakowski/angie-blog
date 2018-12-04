@@ -1,0 +1,11 @@
+mat-card {
+    max-width: 50%;
+}
+
+p {
+    width: 300px;
+}
+
+img {
+    max-width: 100%;
+}

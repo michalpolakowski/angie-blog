@@ -3,3 +3,16 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
+
+.title{
+  font-size: 3.5vh;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+.router-btn {
+  margin: 0 100px;
+}

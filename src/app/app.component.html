@@ -1,8 +1,14 @@
 <mat-toolbar>
-  <a href=#>{{ title }}</a>
-    <a routerLink="/dashboard" class="btn btn-primary">Dashboard</a>
-    <a routerLink="/posts" class="btn btn-secondary">Posts</a>
-  <app-authentication></app-authentication>
+  <span class="title">
+    <a [routerLink]="[ '/dashboard' ]">{{ title }}</a>
+  </span>
+
+  <span class="fill-space">
+    <a routerLink="/dashboard" class="btn btn-primary router-btn">Dashboard</a>
+    <a routerLink="/posts" class="btn btn-secondary router-btn">Posts</a>
+  </span>
+  <span class="fill-space"></span>
+
 </mat-toolbar>
 
 

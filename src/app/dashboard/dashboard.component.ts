@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IPost } from '../post.model';
-import {PostService} from '../post.service';
+import {PostService} from '../services/post.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
     this.getPopularPosts();
   }
 
-  getPopularPosts(): void{
+  getPopularPosts(): void {
     this.postService.getPopularPosts()
       .subscribe(posts => {
         this.posts = posts.slice(0, 5);

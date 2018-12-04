@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'posts', component: PostsComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent},
   { path: 'detail/:pk', component: PostDetailComponent}
 ];
 

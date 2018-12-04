@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class CommentService {
   comments: string[] = [];
-  add(message: string){
+  add(message: string) {
     this.comments.push(message);
   }
-  clear(){
+  clear() {
     this.comments = [];
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { IPost } from './post.model';
+import { IPost } from '../post.model';
 import { CommentService } from './comment.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -20,7 +20,7 @@ export class PostService {
     console.log(`PostService: ${comment}`);
   }
 
-  private handleError<T> (operation = 'operation', result?:T){
+  private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       this.log(`${operation} failed: ${error.message}`);
@@ -28,7 +28,7 @@ export class PostService {
     };
   }
 
-  getPosts(): Observable<Array<any>>{
+  getPosts(): Observable<Array<any>> {
     return this.http.get<any>(this.postsUrl)
       .pipe(
         tap(posts => this.log('fetched posts')),
@@ -39,7 +39,7 @@ export class PostService {
       );
   }
 
-  getPopularPosts(): Observable<Array<any>>{
+  getPopularPosts(): Observable<Array<any>> {
     return this.http.get<any>(`${this.postsUrl}/most_popular/`)
       .pipe(
         tap(posts => this.log('fetched most popular posts')),
