@@ -1,12 +1,14 @@
-<mat-card>
-  <div *ngIf="post; else notExists">
-    <h1>{{ post.title }}</h1>
+<div class="container">
+  <mat-card>
+    <div *ngIf="post; else notExists">
+      <h1>{{ post.title }}</h1>
         <div [innerHtml]='post.text'></div>
-    <button (click)="goBack()">go back</button>
-  </div>
-</mat-card>
-
-<ng-template #notExists>
-  There is no such post.
-</ng-template>
+      <button (click)="goBack()">go back</button>
+    </div>
+  </mat-card>
+  
+  <ng-template #notExists>
+    There is no such post.
+  </ng-template>
+</div>
 

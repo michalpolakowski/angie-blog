@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { IPost } from '../post.model';
+import { IPost } from '../models/post.model';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../services/post.service';
 import { Location } from '@angular/common';
@@ -26,12 +26,6 @@ export class PostDetailComponent implements OnInit {
     const pk = +this.route.snapshot.paramMap.get('pk');
     this.postService.getPost(pk)
       .subscribe((post => this.post = post));
-  }
-
-  save(): void {
-    const pk = +this.route.snapshot.paramMap.get('pk');
-    this.postService.updatePost(this.post, pk)
-      .subscribe(() => this.goBack());
   }
 
   goBack(): void {

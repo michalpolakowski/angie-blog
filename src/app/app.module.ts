@@ -8,20 +8,13 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { CommentsComponent } from './comments/comments.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
 import { MaterialModule } from './material.module';
-
-@NgModule({
-  exports: [
-    CdkTableModule,
-    CdkTreeModule,
-  ]
-})
-export class DemoMaterialModule {}
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +24,7 @@ export class DemoMaterialModule {}
     CommentsComponent,
     DashboardComponent,
     LoginComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +34,6 @@ export class DemoMaterialModule {}
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    DemoMaterialModule,
     ReactiveFormsModule,
     MaterialModule
   ],

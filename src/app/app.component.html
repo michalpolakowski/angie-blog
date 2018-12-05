@@ -7,7 +7,10 @@
     <a routerLink="/dashboard" class="btn btn-primary router-btn">Dashboard</a>
     <a routerLink="/posts" class="btn btn-secondary router-btn">Posts</a>
   </span>
-  <span class="fill-space"></span>
+  <span class="fill-space">
+    <a mat-button [routerLink]="[ '/register' ]">Register</a>
+    <a mat-button [routerLink]="[ '/login' ]">Login</a>
+  </span>
 
 </mat-toolbar>
 

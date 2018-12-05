@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IPost } from '../post.model';
+import { IPost } from '../models/post.model';
 import { PostService} from '../services/post.service';
 
 function htmlToPlainText(text) {

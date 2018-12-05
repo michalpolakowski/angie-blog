@@ -6,6 +6,8 @@ export const environment = {
   production: false
 };
 
+export const BACKEND_URL = 'http://127.0.0.1:8000/';
+
 /*
  * In development mode, for easier debugging, you can ignore zone related error
  * stack frames such as `zone.run`/`zoneDelegate.invokeTask` by importing the

@@ -1,9 +1,10 @@
 mat-card {
     max-width: 50%;
+    margin: 20px;
 }
 
 p {
-    width: 300px;
+    width: 100%;
 }
 
 img {

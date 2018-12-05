@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" enctype="multipart/form-data">
+  <div class="container">
+    <mat-form-field>
+      <input required matInput name="username" placeholder="username" [(ngModel)]="username">
+    </mat-form-field>
+    <mat-form-field>
+      <input required matInput type="email" name="email" placeholder="e-mail" [(ngModel)]="email" email>
+    </mat-form-field>
+    <mat-form-field>
+      <input required type="password" name="password" matInput placeholder="password" [(ngModel)]="password">
+    </mat-form-field>
+    <mat-form-field>
+      <input required matInput type="password" name="confirmPassword" placeholder="confirm password" [(ngModel)]="confirmPassword">
+    </mat-form-field>
+    <mat-form-field>
+      <input required matInput name="name" placeholder="name" [(ngModel)]="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input required matInput name="lastName" placeholder="last name" [(ngModel)]="lastName">
+    </mat-form-field>
+    <button mat-button type="button" md-button (click)="imgFileInput.click()">Add avatar (optional)</button>
+    <input hidden name="avatar" type="file" #imgFileInput (change)="previewImage($event)"  [(ngModel)]="avatar" />
+    <img *ngIf="imgPath" src='{{ imgPath }}' id='imagePreview' height="200">
+    <mat-form-field class="form-group">
+      <textarea matInput name="hobbies" placeholder="hobbies (optional)" [(ngModel)]="hobbies"></textarea>
+    </mat-form-field>
+    <button mat-button id="register-button" type="submit">Register</button>
+  </div>
+</form>
